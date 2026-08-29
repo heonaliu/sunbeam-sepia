@@ -1,13 +1,12 @@
-export default function PhotoPage() {
+import React from 'react'
+
+export function CameraPage() {
   return (
     <>
-      <section id="photo-page">
-        <div className="photo-container">
-          <img
-            src="/vite-logo.svg"
-            alt="Vite Logo"
-            className="photo"
-          />
+      <section id="camera-page">
+        <div className="camera-container">
+          <h1>Camera Page</h1>
+          <p>Capture your moments here.</p>
         </div>
       </section>
     </>

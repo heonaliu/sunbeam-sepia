@@ -49,7 +49,7 @@ Deeken handled the photo capture and download button functionalities.
 
 
 
-
+```
 sunbeam-sepia/
 ├── index.html
 ├── vite.config.js
@@ -86,3 +86,4 @@ sunbeam-sepia/
   └── (components/, App.jsx, hooks/useCanvasExport.js, utils/)
       # scaffolding from the original file layout; left empty and unused —
       # everything ended up living directly in pages/ instead
+```

@@ -1,13 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import sepiaImg from "../assets/sepia.png";
 
 export default function LandingPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-navy flex flex-col items-center justify-center gap-6">
-      <h1 className="text-5xl text-sand text-center leading-relaxed">
-        SEPIA
-      </h1>
+    <div className="min-h-screen bg-ice flex flex-col items-center justify-center gap-6">
+      <img
+        src={sepiaImg}
+        alt="Sepia"
+        className="w-64 sm:w-80 md:w-96 mx-auto"
+      />
       <button onClick={() => navigate("/capture")} className="btn-pixel-rose">
         START
       </button>

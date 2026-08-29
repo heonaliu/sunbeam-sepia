@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { useCamera } from "../hooks/useCamera";
 import { useNavigate } from "react-router-dom";
+import snowflake from "../assets/stickers/winter/winter-4.PNG";
+import starfish from "../assets/stickers/beach/beach-2.PNG";
+import matcha from "../assets/stickers/study/study-2.PNG";
 
 
 export default function CameraPage() {
@@ -52,12 +55,31 @@ export default function CameraPage() {
      {error ? <p className="font-pixel text-sm text-rose">{error}</p> : null}
 
 
-     <video
+     
+      <video
        ref={videoRef}
        autoPlay
        muted
        playsInline
-       className="w-[320px] frame-pixel"
+       className="w-[540px] h-[390px] object-cover frame-pixel"
+     />
+
+     <img
+        src={snowflake}
+        alt="Snowflake Sticker"
+        className="absolute top-4 left-4 w-20 h-20"
+     />
+
+     <img
+        src={starfish}
+        alt="Starfish Sticker"
+        className="absolute top-4 right-4 w-20 h-20"
+     />
+
+     <img
+        src={matcha}
+        alt="Matcha Sticker"
+        className="absolute bottom-4 left-4 w-20 h-20"
      />
 
 

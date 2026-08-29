@@ -23,7 +23,11 @@ export function useCamera() {
 
    try {
      const stream = await navigator.mediaDevices.getUserMedia({
-       video: { facingMode: "user" },
+       video: { 
+        facingMode: "user",
+        width: { ideal: 1260 },
+        height: { ideal: 910 }
+      },
        audio: false,
      });
 
@@ -51,8 +55,8 @@ export function useCamera() {
 
 
    const canvas = document.createElement("canvas");
-   canvas.width = video.videoWidth;
-   canvas.height = video.videoHeight;
+   canvas.width = 720;
+   canvas.height = 520;
 
 
    const ctx = canvas.getContext("2d");

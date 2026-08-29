@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useCamera } from "../hooks/useCamera";
 import { useNavigate } from "react-router-dom";
-import { usePhotobooth } from "../context/PhotoboothContext";
 
 
 export default function CameraPage() {
@@ -54,13 +53,13 @@ export default function CameraPage() {
      {error ? <p className="font-pixel text-sm text-rose">{error}</p> : null}
 
 
-     <video
+     
+      <video
        ref={videoRef}
        autoPlay
        muted
        playsInline
        className="w-[320px] frame-pixel"
-       hidden={!boothStarted}
      />
 
 

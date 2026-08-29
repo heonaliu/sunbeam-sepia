@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useCamera } from "../hooks/useCamera";
 import { useNavigate } from "react-router-dom";
 import { usePhotobooth } from "../context/PhotoboothContext";
+import sepiaImg from "../assets/sepia.png";
 import beach1 from "../assets/stickers/beach/beach-1.PNG";
 import beach2 from "../assets/stickers/beach/beach-2.PNG";
 import beach3 from "../assets/stickers/beach/beach-3.PNG";
@@ -34,7 +35,7 @@ export default function CameraPage() {
 
       <div className="flex min-h-screen items-center justify-center">
         <div className="flex flex-col items-center gap-4">
-          <h1 className="text-3xl text-sand text-center leading-relaxed">SEPIA</h1>
+          <img src={sepiaImg} alt="Sepia" className="w-64" />
 
           <button onClick={() => setBoothStarted(true)} className="btn-pixel-rose" hidden={boothStarted}>
             CAPTURE
@@ -74,7 +75,7 @@ export default function CameraPage() {
                   muted
                   playsInline
                   className="h-full w-full object-cover"
-                  style={{ display: "block" }}
+                  style={{ display: "block", transform: "scaleX(-1)" }}
                 />
               </div>
 

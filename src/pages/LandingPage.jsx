@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import sepiaImg from "../assets/sepia.png";
 import mainImg from "../assets/Main.PNG";
+import teamStrip from "../team-strip.png";
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -33,12 +34,18 @@ export default function LandingPage() {
           <img
             src={mainImg}
             alt="Main"
-            className="w-[clamp(16rem,40vw,36rem)]"
+            className="w-[clamp(16rem,55vw,52rem)]"
           />
         </div>
       </div>
 
       <p className="text-navy text-center pb-8">made by Heona Liu, Jana Leung, Emma Deeken</p>
+
+      <img
+        src={teamStrip}
+        alt=""
+        className="fixed -bottom-20 left-4 w-28 sm:w-40 rotate-[-15deg] pointer-events-none select-none shadow-pixel"
+      />
     </div>
   );
 }

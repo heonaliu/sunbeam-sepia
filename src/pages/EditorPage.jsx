@@ -21,6 +21,10 @@ import studySticker1 from "../assets/stickers/study/study-1.PNG";
 import studySticker2 from "../assets/stickers/study/study-2.PNG";
 import studySticker3 from "../assets/stickers/study/study-3.PNG";
 import studySticker4 from "../assets/stickers/study/study-4.PNG";
+import oceanSticker1 from "../assets/stickers/ocean/ocean-1.PNG";
+import oceanSticker2 from "../assets/stickers/ocean/ocean-2.PNG";
+import oceanSticker3 from "../assets/stickers/ocean/ocean-3.PNG";
+import oceanSticker4 from "../assets/stickers/ocean/ocean-4.PNG";
 
 const THEMES = [
   {
@@ -57,7 +61,7 @@ const THEMES = [
     border: "border-blue",
     bg: oceanBg,
     over: oceanOver,
-    stickers: [],
+    stickers: [oceanSticker1, oceanSticker2, oceanSticker3, oceanSticker4],
   },
 ];
 

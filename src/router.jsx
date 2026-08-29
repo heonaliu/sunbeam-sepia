@@ -1,4 +1,3 @@
-// src/router.jsx
 import { createBrowserRouter } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import CameraPage from "./pages/CameraPage";

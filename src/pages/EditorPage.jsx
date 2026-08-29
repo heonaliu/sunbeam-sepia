@@ -1,14 +1,10 @@
 import React from 'react'
 
-export function EditorPage() {
-  return (
-    <>
-      <section id="editor-page">
-        <div className="editor-container">
-          <h1>Editor Page</h1>
-          <p>Edit your photos here.</p>
-        </div>
-      </section>
-    </>
-  )
+export default function EditorPage() {
+   return (
+    <div className="min-h-screen flex flex-col items-center justify-center gap-4">
+      <h1 className="text-2xl font-bold">Editor Page</h1>
+      <p className="text-gray-500">(template + sticker + download feature goes here)</p>
+    </div>
+  );
 }

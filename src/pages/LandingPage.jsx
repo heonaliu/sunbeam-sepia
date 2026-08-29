@@ -1,14 +1,18 @@
-import React from 'react'
 
-export function LandingPage() {
+import { useNavigate } from "react-router-dom";
+
+export default function LandingPage() {
+  const navigate = useNavigate();
+
   return (
-    <>
-      <section id="landing-page">
-        <div className="landing-container">
-          <h1>Sunbeam Sepia</h1>
-          <p>Place to Capture Memories</p>
-        </div>
-      </section>
-    </>
-  )
+    <div className="min-h-screen flex flex-col items-center justify-center gap-4">
+      <h1 className="text-3xl font-bold">Photobooth</h1>
+      <button
+        onClick={() => navigate("/capture")}
+        className="px-6 py-3 bg-black text-white rounded-lg"
+      >
+        Start
+      </button>
+    </div>
+  );
 }

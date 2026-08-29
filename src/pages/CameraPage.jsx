@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { useCamera } from "../hooks/useCamera";
 import { useNavigate } from "react-router-dom";
+import { usePhotobooth } from "../context/PhotoboothContext";
 
 
 export default function CameraPage() {
  const navigate = useNavigate();
  const { videoRef, photos, error, isReady, countdown, boothStarted, setBoothStarted, takePhoto, retake, cdOnRef } = useCamera();
+ const { setPhotos: setSharedPhotos } = usePhotobooth();
 
 
 
@@ -27,7 +29,7 @@ export default function CameraPage() {
      </button>
 
 
-     <button onClick={() => navigate("/edit")} className="px-6 py-3 bg-black text-white rounded-lg" hidden={photos.length !== 3}>
+     <button onClick={() => { setSharedPhotos(photos); navigate("/edit"); }} className="px-6 py-3 bg-black text-white rounded-lg" hidden={photos.length !== 3}>
        Customize
      </button>
 

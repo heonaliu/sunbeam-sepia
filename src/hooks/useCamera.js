@@ -8,7 +8,7 @@ export function useCamera() {
   const [isReady, setIsReady] = useState(false);
   const [countdown, setCountdown] = useState("");
   const [boothStarted, setBoothStarted] = useState(false);
-  const [moveOn, setMoveOn] = useState(false);
+
 
   const startCamera = async () => {
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
@@ -51,20 +51,23 @@ export function useCamera() {
 
     const dataUrl = canvas.toDataURL("image/jpeg", 0.9);
     setPhotos((prev) => [...prev, dataUrl]);
+
   };
 
-  const takeThreePhotos = async () => {
-    for (let photoIndex = 0; photoIndex < 3; photoIndex++) {
+  const takePhoto = async () => {
       for (let second = 5; second > 0; second--) {
         setCountdown(second);
         await new Promise((resolve) => setTimeout(resolve, 1000));
       }
-
       capturePhoto();
-    }
-    setCountdown("All done! Please proceed to customize your photos.");
-    setMoveOn(true);
+      setCountdown("");
   };
+
+  const retake = () => {
+    setPhotos((prev) => prev.slice(0, -1));
+    takePhoto();
+  }
+
 
   useEffect(() => {
     if (!boothStarted) return;
@@ -77,7 +80,7 @@ export function useCamera() {
     };
   }, [boothStarted]);
 
-  return { videoRef, photos, error, isReady, countdown, boothStarted, setBoothStarted, moveOn, setMoveOn, takeThreePhotos };
+  return { videoRef, photos, error, isReady, countdown, boothStarted, setBoothStarted, takePhoto, retake };
 }
 
 export default useCamera;

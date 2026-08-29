@@ -3,12 +3,13 @@ import { useCamera } from "../hooks/useCamera";
 import { useNavigate } from "react-router-dom";
 
 export default function CameraPage() {
-  const { videoRef, photos, error, isReady, countdown, boothStarted, setBoothStarted, moveOn, setMoveOn, takeThreePhotos } = useCamera();
+  const navigate = useNavigate();
+  const { videoRef, photos, error, isReady, countdown, boothStarted, setBoothStarted, takePhoto, retake } = useCamera();
 
 
   useEffect(() => {
     if (boothStarted && isReady) {
-      takeThreePhotos();
+      takePhoto();
     }
   }, [boothStarted, isReady]);
 
@@ -20,8 +21,16 @@ export default function CameraPage() {
         Start Booth
       </button>
 
-      <button onClick={() => navigate("/edit")} className="px-6 py-3 bg-black text-white rounded-lg" hidden={!moveOn}>
+      <button onClick={() => navigate("/edit")} className="px-6 py-3 bg-black text-white rounded-lg" hidden={photos.length !== 3}>
         Customize
+      </button>
+
+      <button onClick={() => retake()} className="px-6 py-3 bg-black text-white rounded-lg" hidden={photos.length == 3 || !boothStarted}>
+        Retake
+      </button>
+
+      <button onClick={() => takePhoto()} className="px-6 py-3 bg-black text-white rounded-lg" hidden={photos.length == 3 || !boothStarted}>
+        Continue
       </button>
 
 

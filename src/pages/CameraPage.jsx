@@ -18,7 +18,7 @@ export default function CameraPage() {
       <h1 className="text-3xl text-sand text-center leading-relaxed">SEPIA</h1>
 
       <button onClick={() => setBoothStarted(true)} className="btn-pixel-rose" hidden={boothStarted}>
-        START
+        CAPTURE
       </button>
 
       <button onClick={() => navigate("/edit")} className="btn-pixel-blue" hidden={!moveOn}>

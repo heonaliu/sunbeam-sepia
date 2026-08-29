@@ -21,7 +21,7 @@
          bg-sand text-navy shadow-pixel
          transition-none active:translate-x-1 active:translate-y-1 active:shadow-none
          select-none cursor-pointer;
-  border-radius: 0;
+         border-radius: 0;
 }
 
 @layer components {

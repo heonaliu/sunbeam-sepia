@@ -1,5 +1,5 @@
-// tailwind.config.js
-export default {
+// tailwind.config.cjs — CommonJS copy for tools that require CJS
+module.exports = {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     extend: {
@@ -16,12 +16,11 @@ export default {
         pixel: ['"Press Start 2P"', "cursive"],
       },
       boxShadow: {
-        // stepped "pixel" border look, no blur/rounded corners
         pixel: "4px 4px 0px 0px #124A7D",
         "pixel-sm": "2px 2px 0px 0px #124A7D",
       },
       borderRadius: {
-        none: "0px", // pixel art = no rounded corners anywhere
+        none: "0px",
       },
     },
   },

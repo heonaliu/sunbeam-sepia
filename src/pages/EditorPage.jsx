@@ -1,10 +1,13 @@
-import React from 'react'
+import React from "react";
 
 export default function EditorPage() {
-   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-4">
-      <h1 className="text-2xl font-bold">Editor Page</h1>
-      <p className="text-gray-500">(template + sticker + download feature goes here)</p>
+  return (
+    <div className="min-h-screen bg-ice flex flex-col items-center gap-6 py-8">
+      <div className="frame-pixel bg-white p-4">{/* strip canvas */}</div>
+      <div className="flex gap-2 bg-sand border-4 border-navy p-3">
+        {/* sticker tray items */}
+      </div>
+      <button className="btn-pixel-blue">DOWNLOAD</button>
     </div>
   );
 }

@@ -14,7 +14,7 @@ export default function LandingPage() {
       <button onClick={() => navigate("/capture")} className="btn-pixel-rose">
         START
       </button>
-      <p className="text-sand">capture the day, the people, the memories</p>
+      <p className="text-navy">capture the day, the people, the memories</p>
     </div>
   );
 }

@@ -46,6 +46,7 @@ export default function CameraPage() {
         muted
         playsInline
         className="w-[320px] frame-pixel"
+        hidden={!boothStarted}
       />
 
       <div className="flex gap-2">

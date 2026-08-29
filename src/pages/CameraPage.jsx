@@ -40,17 +40,21 @@ export default function CameraPage() {
             CAPTURE
           </button>
 
-          <button onClick={() => { setSharedPhotos(photos); navigate("/edit"); }} className="px-6 py-3 bg-black text-white rounded-lg" hidden={photos.length !== 3}>
-            Customize
-          </button>
+          <div className="flex gap-4">
 
-          <button onClick={() => retake()} className="px-6 py-3 bg-black text-white rounded-lg" hidden={photos.length == 3 || !boothStarted || cdOnRef.current}>
-            Retake
-          </button>
+            <button onClick={() => { setSharedPhotos(photos); navigate("/edit"); }} className="px-6 py-3 bg-black text-white rounded-lg" hidden={photos.length !== 3}>
+              Customize
+            </button>
 
-          <button onClick={() => takePhoto()} className="px-6 py-3 bg-black text-white rounded-lg" hidden={photos.length == 3 || !boothStarted || cdOnRef.current}>
-            Continue
-          </button>
+            <button onClick={() => retake()} className="px-6 py-3 bg-black text-white rounded-lg" hidden={!boothStarted || cdOnRef.current}>
+              Retake
+            </button>
+
+            <button onClick={() => takePhoto()} className="px-6 py-3 bg-black text-white rounded-lg" hidden={photos.length == 3 || !boothStarted || cdOnRef.current}>
+              Continue
+            </button>
+
+          </div>
 
           {countdown > 0 ? (
             <div className="text-3xl font-pixel text-sand">{countdown}</div>

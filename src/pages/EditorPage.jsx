@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { usePhotobooth } from "../context/PhotoboothContext";
+import html2canvas from "html2canvas";
 import winterBg from "../assets/templates/winter-bg.PNG";
 import winterOver from "../assets/templates/winter-over.PNG";
 import beachBg from "../assets/templates/beach-bg.PNG";
@@ -96,6 +97,15 @@ export default function EditorPage() {
     );
   };
 
+  const downloadImage = async () => {
+  if (!stripRef.current) return;
+  const canvas = await html2canvas(stripRef.current, { backgroundColor: null });
+  const link = document.createElement("a");
+  link.href = canvas.toDataURL("image/png");
+  link.download = "photobooth-strip.png";
+  link.click();
+}
+
   return (
     <div className="h-screen w-screen overflow-hidden bg-ice flex items-center justify-center gap-10 px-8">
       <div
@@ -173,7 +183,9 @@ export default function EditorPage() {
           ))}
         </div>
 
-        <button className="btn-pixel-blue">DOWNLOAD</button>
+        <button onClick={downloadImage} className="btn-pixel-blue">
+          DOWNLOAD
+        </button>
       </div>
     </div>
   );

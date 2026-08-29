@@ -12,6 +12,15 @@ Created by Heona Liu, Jana Leung, and Emma Deeken as part of Hack Club's Sunbeam
 
 
 
+## TO USE
+
+
+
+
+Access through this [link](sunbeam-sepia.vercel.app)!
+
+
+
 
 ## PRIVACY
 

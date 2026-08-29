@@ -1,6 +1,6 @@
 # SEPIA
 
-![CoverImage](image.png)
+![cover image](image.png)
 
 
 This virtual photobooth allows users to upload three picture using a timed capture camera and formats them as a downloadable photo strip. There are four themes available to choose from, and each comes with drag-and-drop stickers to embellish the strip.
@@ -13,7 +13,7 @@ Created by Heona Liu, Jana Leung, and Emma Deeken as part of Hack Club's Sunbeam
 
 
 
-# PRIVACY
+## PRIVACY
 
 
 
@@ -23,7 +23,7 @@ User photos are only used locally. They are never uploaded online and are not st
 
 
 
-# CONTRIBUTIONS
+## CONTRIBUTIONS
 
 
 
@@ -45,7 +45,7 @@ Deeken handled the photo capture and download button functionalities.
 
 
 
-# Organization:
+## Organization:
 
 
 

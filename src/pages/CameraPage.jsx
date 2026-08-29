@@ -43,15 +43,15 @@ export default function CameraPage() {
 
           <div className="flex gap-4">
 
-            <button onClick={() => { setSharedPhotos(photos); navigate("/edit"); }} className="px-6 py-3 bg-black text-white rounded-lg" hidden={photos.length !== 3}>
+            <button onClick={() => { setSharedPhotos(photos); navigate("/edit"); }} className="btn-pixel-rose" hidden={photos.length !== 3}>
               Customize
             </button>
 
-            <button onClick={() => retake()} className="px-6 py-3 bg-black text-white rounded-lg" hidden={!boothStarted || cdOnRef.current}>
+            <button onClick={() => retake()} className="btn-pixel" hidden={!boothStarted || cdOnRef.current}>
               Retake
             </button>
 
-            <button onClick={() => takePhoto()} className="px-6 py-3 bg-black text-white rounded-lg" hidden={photos.length == 3 || !boothStarted || cdOnRef.current}>
+            <button onClick={() => takePhoto()} className="btn-pixel-rose" hidden={photos.length == 3 || !boothStarted || cdOnRef.current}>
               Continue
             </button>
 

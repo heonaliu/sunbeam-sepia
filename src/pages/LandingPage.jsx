@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import sepiaImg from "../assets/sepia.png";
+import mainImg from "../assets/Main.PNG";
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -8,11 +9,18 @@ export default function LandingPage() {
     <div className="min-h-screen bg-ice flex flex-col">
       <div className="flex-1 flex flex-col sm:flex-row items-center gap-10 px-6 sm:px-16">
         <div className="flex flex-col items-center sm:items-start gap-6 w-full sm:w-auto">
-          <img
-            src={sepiaImg}
-            alt="Sepia"
-            className="w-[clamp(14rem,35vw,32rem)]"
-          />
+          <div className="relative">
+            <img
+              src={sepiaImg}
+              alt="Sepia"
+              className="w-[clamp(18rem,50vw,44rem)]"
+            />
+            <img
+              src={mainImg}
+              alt=""
+              className="sm:hidden absolute -top-3 -right-3 w-16"
+            />
+          </div>
           <button
             onClick={() => navigate("/capture")}
             className="btn-pixel-rose w-48 sm:w-[clamp(20rem,60vw,50rem)] sm:-ml-40 text-center sm:text-right text-lg sm:text-2xl"
@@ -21,7 +29,13 @@ export default function LandingPage() {
           </button>
         </div>
 
-        <div className="hidden sm:block flex-1" />
+        <div className="hidden sm:flex flex-1 items-center justify-center">
+          <img
+            src={mainImg}
+            alt="Main"
+            className="w-[clamp(16rem,40vw,36rem)]"
+          />
+        </div>
       </div>
 
       <p className="text-navy text-center pb-8">made by Heona Liu, Jana Leung, Emma Deeken</p>

@@ -16,74 +16,53 @@ User photos are only used locally. They are never uploaded online and are not st
 # CONTRIBUTIONS
 
 
-Liu developed the basic framework for the project, handled the formatting of the photo strip, and created the drag and drop functionality.
+Liu developed the basic framework for the project, handled the landing page, and created the drag and drop functionality, and photostrip editing functionality!
 
 
 Leung created original artwork for the photo strip themes, embellishments, and other graphics used by the program.
 
 
-Deeken handled the photo capture capability and [made the download button work]
+Deeken handled the photo capture capability and made the download button work
 
 
 
 
-Organization:
+# Organization:
 
 
 sunbeam-sepia/
 ├── index.html
 ├── vite.config.js
 ├── tailwind.config.js
-├── postcss.config.js
 ├── package.json
 ├── public/
-│   └── favicon.svg
+│   ├── favicon.svg
+│   └── icons.svg
 └── src/
-   ├── main.jsx
-   ├── App.jsx
-   ├── index.css                 # tailwind directives
+   ├── main.jsx                     # app entry point, wraps the router in PhotoboothProvider
+   ├── router.jsx                   # react-router routes: "/", "/capture", "/edit"
+   ├── index.css                    # tailwind directives + pixel-theme button/frame utilities
    │
    ├── pages/
-   │   ├── LandingPage.jsx
-   │   ├── CameraPage.jsx
-   │   └── EditorPage.jsx
-   │
-   ├── components/
-   │   ├── camera/
-   │   │   ├── CameraView.jsx        # <video> + getUserMedia logic
-   │   │   ├── CaptureButton.jsx
-   │   │   ├── PhotoPreview.jsx       # review/retake shot
-   │   │   └── CountdownTimer.jsx     # optional 3-2-1 countdown
-   │   │
-   │   ├── editor/
-   │   │   ├── StripCanvas.jsx        # canvas where photos+stickers render
-   │   │   ├── TemplateSelector.jsx   # choose strip design/layout
-   │   │   ├── StickerPanel.jsx       # draggable sticker tray
-   │   │   ├── DraggableSticker.jsx   # individual sticker on canvas
-   │   │   └── DownloadButton.jsx     # canvas -> PNG export
-   │   │
-   │   └── shared/
-   │       ├── Navbar.jsx
-   │       ├── Button.jsx
-   │       └── PageTransition.jsx     # optional
-   │
-   ├── assets/
-   │   ├── templates/              # strip background images/SVGs
-   │   │   ├── template1.png
-   │   │   └── template2.png
-   │   └── stickers/                # sticker PNGs/SVGs
-   │       ├── heart.svg
-   │       └── star.svg
-   │
-   ├── context/
-   │   └── PhotoboothContext.jsx    # shares captured photos + chosen template across pages
+   │   ├── LandingPage.jsx          # hero (logo, START button, team credits)
+   │   ├── CameraPage.jsx           # countdown capture flow, retake/continue controls
+   │   └── EditorPage.jsx           # strip compositor: theme bg/overlay, photos, drag-and-drop stickers
    │
    ├── hooks/
-   │   ├── useCamera.js              # getUserMedia setup/teardown
-   │   └── useCanvasExport.js        # canvas.toBlob / toDataURL logic
+   │   └── useCamera.js             # getUserMedia setup/teardown, countdown, capture/retake logic
    │
-   ├── utils/
-   │   ├── canvasHelpers.js          # drawImage, compositing math
-   │   └── downloadImage.js          # trigger browser download
+   ├── context/
+   │   └── PhotoboothContext.jsx    # shares captured photos between CameraPage and EditorPage
    │
-   └── router.jsx                    # react-router routes
+   ├── assets/
+   │   ├── sepia.png, Main.PNG, Favicon.PNG      # branding images
+   │   ├── templates/                            # per-theme strip backgrounds + overlays
+   │   │   └── {winter,beach,study,ocean}-{bg,over}.PNG
+   │   └── stickers/                             # per-theme draggable sticker sets
+   │       └── {winter,beach,study,ocean}/{theme}-{1..4}.PNG
+   │
+   ├── team-strip.png               # tilted photo strip graphic on the landing page
+   │
+   └── (components/, App.jsx, hooks/useCanvasExport.js, utils/)
+       # scaffolding from the original file layout; left empty and unused —
+       # everything ended up living directly in pages/ instead

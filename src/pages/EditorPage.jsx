@@ -6,6 +6,8 @@ import beachBg from "../assets/templates/beach-bg.PNG";
 import beachOver from "../assets/templates/beach-over.PNG";
 import studyBg from "../assets/templates/study-bg.PNG";
 import studyOver from "../assets/templates/study-over.PNG";
+import oceanBg from "../assets/templates/ocean-bg.PNG";
+import oceanOver from "../assets/templates/ocean-over.PNG";
 import winterSticker1 from "../assets/stickers/winter/winter-1.PNG";
 import winterSticker2 from "../assets/stickers/winter/winter-2.PNG";
 import winterSticker3 from "../assets/stickers/winter/winter-3.PNG";
@@ -47,7 +49,15 @@ const THEMES = [
     over: studyOver,
     stickers: [studySticker1, studySticker2, studySticker3, studySticker4],
   },
-  { id: "blue", name: "OCEAN BREEZE", swatch: "bg-blue", border: "border-blue", bg: null, over: null, stickers: [] },
+  {
+    id: "blue",
+    name: "OCEAN BREEZE",
+    swatch: "bg-blue",
+    border: "border-blue",
+    bg: oceanBg,
+    over: oceanOver,
+    stickers: [],
+  },
 ];
 
 const STRIP_BORDER = 4;

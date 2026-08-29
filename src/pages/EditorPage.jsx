@@ -87,10 +87,10 @@ export default function EditorPage() {
   };
 
   return (
-    <div className="min-h-screen bg-ice flex flex-col items-center gap-6 py-8">
+    <div className="h-screen w-screen overflow-hidden bg-ice flex items-center justify-center gap-10 px-8">
       <div
         ref={stripRef}
-        className={`relative overflow-hidden shadow-pixel border-4 ${theme.border} bg-white w-64 aspect-[1/3]`}
+        className={`relative overflow-hidden shrink-0 shadow-pixel border-4 ${theme.border} bg-white h-[85vh] aspect-[1/3]`}
         onDragOver={(e) => e.preventDefault()}
         onDrop={handleStickerDrop}
       >
@@ -98,9 +98,9 @@ export default function EditorPage() {
           <img src={theme.bg} alt="" className="absolute inset-0 h-full w-full object-cover" />
         )}
 
-        <div className="absolute inset-0 flex flex-col gap-4 p-4">
+        <div className="absolute inset-0 flex flex-col justify-center gap-4 p-4">
           {[0, 1, 2].map((index) => (
-            <div key={index} className="flex-1 overflow-hidden">
+            <div key={index} className="aspect-[36/26] overflow-hidden">
               {photos[index] && (
                 <img
                   src={photos[index]}
@@ -132,38 +132,39 @@ export default function EditorPage() {
         ))}
       </div>
 
+      <div className="flex flex-col gap-4 w-64 shrink-0">
+        <div className="frame-pixel bg-white min-h-24 p-3 flex flex-wrap gap-2 justify-center items-center">
+          {theme.stickers.map((src, index) => (
+            <img
+              key={index}
+              src={src}
+              alt="sticker"
+              draggable
+              onDragStart={(e) => e.dataTransfer.setData("text/plain", src)}
+              className="w-12 h-12 object-contain cursor-grab select-none"
+            />
+          ))}
+        </div>
 
-      <div className="frame-pixel bg-white w-64 min-h-24 p-3 flex flex-wrap gap-2 justify-center items-center">
-        {theme.stickers.map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt="sticker"
-            draggable
-            onDragStart={(e) => e.dataTransfer.setData("text/plain", src)}
-            className="w-12 h-12 object-contain cursor-grab select-none"
-          />
-        ))}
+        <div className="frame-pixel bg-white p-3 flex items-center justify-center gap-3">
+          <div className={`w-8 h-8 border-4 border-navy ${theme.swatch}`} />
+          <span className="font-pixel text-sm text-navy">{theme.name}</span>
+        </div>
+
+        <div className="frame-pixel bg-white p-3 flex gap-3 justify-center">
+          {THEMES.map((t) => (
+            <button
+              key={t.id}
+              onClick={() => handleThemeChange(t)}
+              className={`w-10 h-10 border-4 ${t.swatch} ${
+                theme.id === t.id ? "border-navy" : "border-ice"
+              }`}
+            />
+          ))}
+        </div>
+
+        <button className="btn-pixel-blue">DOWNLOAD</button>
       </div>
-
-      <div className="frame-pixel bg-white w-64 p-3 flex items-center justify-center gap-3">
-        <div className={`w-8 h-8 border-4 border-navy ${theme.swatch}`} />
-        <span className="font-pixel text-sm text-navy">{theme.name}</span>
-      </div>
-
-      <div className="frame-pixel bg-white w-64 p-3 flex gap-3 justify-center">
-        {THEMES.map((t) => (
-          <button
-            key={t.id}
-            onClick={() => handleThemeChange(t)}
-            className={`w-10 h-10 border-4 ${t.swatch} ${
-              theme.id === t.id ? "border-navy" : "border-ice"
-            }`}
-          />
-        ))}
-      </div>
-
-      <button className="btn-pixel-blue">DOWNLOAD</button>
     </div>
   );
 }

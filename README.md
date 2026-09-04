@@ -8,7 +8,7 @@ Heona Liu, Jana Leung, and Emma Deeken as part of Hack Club's Sunbeam Boston eve
 
 ## TRY IT
 
-Access through this [link](sunbeam-sepia.vercel.app)!
+Access through this [sunbeam-sepia.vercel.app](sunbeam-sepia.vercel.app)!
 
 ## Inspiration
 

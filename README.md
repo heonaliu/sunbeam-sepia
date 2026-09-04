@@ -6,9 +6,13 @@ This virtual photobooth allows users to upload three picture using a timed captu
 
 Heona Liu, Jana Leung, and Emma Deeken as part of Hack Club's Sunbeam Boston event.
 
-## TO USE
+## TRY IT
 
 Access through this [link](sunbeam-sepia.vercel.app)!
+
+## Inspiration
+
+Jana, Emma, and Heona wanted a space to keep memories and capture them with the people they care most about in a fun, memorable, unique way. Additionally, we often walk past photo booths but hesitate to go in because it sometimes costs a lot of money! Sepia was a way to keep things happy while being accessible anywhere across the world.
 
 ## PRIVACY
 
@@ -18,7 +22,6 @@ User photos are only used locally. They are never uploaded online and are not st
 
 ## CONTRIBUTIONS
 
-
 Liu developed the basic framework for the project, handled the landing page, and created the drag and drop functionality, and photostrip editing functionality.
 
 
@@ -26,6 +29,15 @@ Leung created original artwork for the photo strip themes, embellishments, and o
 
 
 Deeken handled the photo capture and download button functionalities.
+
+## TECH STACK
+- Framework: ReactJS, NodeJS, TailwindCSS, Canvas API, OpenMediaAPI
+- Resprite (art)
+
+## FUTURE IDEAS
+
+- Creating more themes
+- Accessible on mobile as a website or app via React Native
 
 
 ## Organization:
